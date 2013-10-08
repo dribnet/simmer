@@ -1,5 +1,6 @@
 package com.stripe.simmer
 
+import scala.util.{Try, Success, Failure}
 import java.util.Calendar._
 import java.util.GregorianCalendar
 import com.twitter.algebird._
@@ -36,7 +37,10 @@ trait AlgebirdAggregator[A] extends MonoidAggregator[A] {
 	def serialize(value : A) = MAGIC + injection(value)
 	def deserialize(serialized : String) = {
 		if(serialized.startsWith(MAGIC))
-			injection.invert(serialized.drop(MAGIC.size))
+			injection.invert(serialized.drop(MAGIC.size)) match {
+				case Success(v) => Some(v)
+				case Failure(v) => None
+			}			
 		else
 			None
 	}
