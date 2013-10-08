@@ -12,7 +12,7 @@ object AlgebirdAggregators extends Registrar {
 	register("max", DoubleMax)
 	register("min", DoubleMin)
 	register("uv", 12){new HyperLogLog(_)}
-	register("mh", 64){new MinHash(_)}
+	// register("mh", 64){new MinHash(_)}
 	register("pct", 50){new Percentile(_)}
 	register("fh", 10){new HashingTrick(_)}
 	register("dcy", 86400){new Decay(_)}
@@ -201,11 +201,13 @@ class HashingTrick(bits : Int) extends KryoAggregator[AdaptiveVector[Double]] {
 	}
 }
 
-class MinHash(hashes : Int) extends AlgebirdAggregator[Array[Byte]] {
+/*
+class MinHash(hashes : Int) extends AlgebirdAggregator[MinHashSignature] {
 	val monoid = new MinHasher16(0.1, hashes * 2)
-	val injection = Bijection.bytes2Base64 andThen Base64String.unwrap
+	// val injection(mh : MinHashSignature, s : String) = Bijection.bytes2Base64 andThen Base64String.unwrap
 	def prepare(in : String) = monoid.init(in)
-	def present(out : Array[Byte]) = {
-		out.grouped(2).toList.map{h => h.map{"%02X".format(_)}.mkString}.mkString(":")
+	def present(out : MinHashSignature) = {
+		out.bytes.grouped(2).toList.map{h => h.map{"%02X".format(_)}.mkString}.mkString(":")
 	}
 }
+*/
