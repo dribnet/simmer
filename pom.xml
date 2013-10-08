@@ -28,6 +28,11 @@
           <version>0.3.4</version>
       </dependency>
        <dependency>
+          <groupId>com.twitter</groupId>
+          <artifactId>chill-bijection_2.10</artifactId>
+          <version>0.3.4</version>
+      </dependency>
+       <dependency>
           <groupId>org.rogach</groupId>
           <artifactId>scallop_2.10</artifactId>
           <version>0.9.4</version>
