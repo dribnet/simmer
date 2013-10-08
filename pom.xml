@@ -10,32 +10,37 @@
      <dependency>
           <groupId>org.scala-lang</groupId>
           <artifactId>scala-library</artifactId>
-          <version>2.9.2</version>
+          <version>2.10.3</version>
       </dependency>
        <dependency>
           <groupId>com.twitter</groupId>
-          <artifactId>algebird-core_2.9.2</artifactId>
-          <version>0.1.13</version>
+          <artifactId>algebird-core_2.10</artifactId>
+          <version>0.3.0</version>
       </dependency>
        <dependency>
           <groupId>com.twitter</groupId>
-          <artifactId>chill_2.9.2</artifactId>
-          <version>0.2.0</version>
+          <artifactId>bijection-core_2.10</artifactId>
+          <version>0.5.3</version>
+      </dependency>
+       <dependency>
+          <groupId>com.twitter</groupId>
+          <artifactId>chill_2.10</artifactId>
+          <version>0.3.4</version>
       </dependency>
        <dependency>
           <groupId>org.rogach</groupId>
-          <artifactId>scallop_2.9.2</artifactId>
-          <version>0.9.1</version>
+          <artifactId>scallop_2.10</artifactId>
+          <version>0.9.4</version>
       </dependency>
       <dependency>
         <groupId>com.twitter</groupId>
-        <artifactId>finagle-redis_2.9.2</artifactId>
-        <version>6.3.0</version>
+        <artifactId>finagle-redis_2.10</artifactId>
+        <version>6.6.2</version>
       </dependency>
     <dependency>
       <groupId>com.twitter</groupId>
-      <artifactId>finagle-http_2.9.2</artifactId>
-      <version>6.3.0</version>
+      <artifactId>finagle-http_2.10</artifactId>
+      <version>6.6.2</version>
     </dependency>
 
   </dependencies>

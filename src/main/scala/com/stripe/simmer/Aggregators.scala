@@ -1,10 +1,10 @@
 package com.stripe.simmer
 
+import java.util.Calendar._
+import java.util.GregorianCalendar
 import com.twitter.algebird._
 import com.twitter.bijection._
 import com.twitter.chill._
-import java.util.Calendar._
-import java.util.GregorianCalendar
 
 object AlgebirdAggregators extends Registrar {
 	register("sum", DoubleSum)
